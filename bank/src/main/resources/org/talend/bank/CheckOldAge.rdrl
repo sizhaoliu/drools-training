@@ -1,0 +1,9 @@
+package org.talend.bank;
+
+import java.lang.Number;
+
+rule "CheckOldAge"
+	dialect "mvel"
+	when
+	then
+end

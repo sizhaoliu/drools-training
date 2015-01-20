@@ -4,6 +4,10 @@ import java.lang.Number;
 
 rule "CheckOldAge"
 	dialect "mvel"
+	no-loop true
 	when
+		person : LoanSimulator( age > 70 , rejected == false )
 	then
+		person.setRejected( true );
+		person.setReason( "AGE" );
 end

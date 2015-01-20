@@ -8,37 +8,34 @@ public class LoanSimulator implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
 
-    @org.kie.api.definition.type.Position(value = 0)
-    private int age;
+    @org.kie.api.definition.type.Position(0)
+	private int age;
 
-    @org.kie.api.definition.type.Position(value = 1)
-    private double annualRevenue;
+    @org.kie.api.definition.type.Position(1)
+	private double annualRevenue;
 
-    @org.kie.api.definition.type.Position(value = 2)
-    private double loanAmount;
+    @org.kie.api.definition.type.Position(2)
+	private double loanAmount;
 
-    @org.kie.api.definition.type.Position(value = 3)
-    private double loanDeposit;
+    @org.kie.api.definition.type.Position(3)
+	private double loanDeposit;
 
-    @org.kie.api.definition.type.Position(value = 4)
-    private double loanInterest;
+    @org.kie.api.definition.type.Position(4)
+	private double loanInterest;
 
-    @org.kie.api.definition.type.Position(value = 5)
-    private double monthlyPayment;
+    @org.kie.api.definition.type.Position(5)
+	private double monthlyPayment;
 
-    public LoanSimulator() {
-    }
-    
-    public LoanSimulator(int age, double annualRevenue, double loanAmount, double loanDeposit, double loanInterest, double monthlyPayment) {
-        this.age = age;
-        this.annualRevenue = annualRevenue;
-        this.loanAmount = loanAmount;
-        this.loanDeposit = loanDeposit;
-        this.loanInterest = loanInterest;
-        this.monthlyPayment = monthlyPayment;
-    }
+    @org.kie.api.definition.type.Position(value = 6)
+	private int numberOfYears;
 
-    public int getAge() {
+	@org.kie.api.definition.type.Position(value = 7)
+	private boolean rejected;
+
+	@org.kie.api.definition.type.Position(value = 8)
+	private java.lang.String reason;
+
+	public int getAge() {
         return this.age;
     }
     
@@ -85,5 +82,46 @@ public class LoanSimulator implements java.io.Serializable {
     public void setMonthlyPayment(double monthlyPayment) {
         this.monthlyPayment = monthlyPayment;
     }
+
+	public int getNumberOfYears() {
+		return this.numberOfYears;
+	}
+
+	public void setNumberOfYears(int numberOfYears) {
+		this.numberOfYears = numberOfYears;
+	}
+
+	public boolean isRejected() {
+		return this.rejected;
+	}
+
+	public void setRejected(boolean rejected) {
+		this.rejected = rejected;
+	}
+
+	public java.lang.String getReason() {
+		return this.reason;
+	}
+
+	public void setReason(java.lang.String reason) {
+		this.reason = reason;
+	}
+
+	public LoanSimulator() {
+	}
+
+	public LoanSimulator(int age, double annualRevenue, double loanAmount,
+			double loanDeposit, double loanInterest, double monthlyPayment,
+			int numberOfYears, boolean rejected, java.lang.String reason) {
+		this.age = age;
+		this.annualRevenue = annualRevenue;
+		this.loanAmount = loanAmount;
+		this.loanDeposit = loanDeposit;
+		this.loanInterest = loanInterest;
+		this.monthlyPayment = monthlyPayment;
+		this.numberOfYears = numberOfYears;
+		this.rejected = rejected;
+		this.reason = reason;
+	}
 
 }

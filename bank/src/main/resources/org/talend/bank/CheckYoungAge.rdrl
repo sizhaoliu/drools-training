@@ -5,7 +5,7 @@ import java.lang.Number;
 rule "CheckYoungAge"
 	dialect "mvel"
 	when
-		person : LoanSimulator( age < 18 , rejected == false )
+		person : LoanSimulator( age < 17 , rejected == false )
 	then
 		person.setRejected( true );
 		person.setReason( "AGE" );
